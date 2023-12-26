@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualStudioUserFile ProjectType="typeStaticLibrary" ProjectCreator="Intel Fortran" Keyword="Static Library" Version="11.0" ProjectIdGuid="{4BD9BE9F-E0F6-4977-B042-D44A63283AE3}">
+	<Configurations>
+		<Configuration Name="Debug|Win32"/>
+		<Configuration Name="Release|Win32"/>
+		<Configuration Name="MPI_Debug|Win32"/>
+		<Configuration Name="MPI_Release|Win32"/>
+		<Configuration Name="netcdf_Debug|Win32"/>
+		<Configuration Name="netcdf_Release|Win32"/>
+		<Configuration Name="MPI_netcdf_Debug|Win32"/>
+		<Configuration Name="MPI_netcdf_Release|Win32"/>
+		<Configuration Name="Debug|x64" CommandArguments="d:\data\dano\XBeach testcases\Deltares_case1.01_q3d\" WorkingDirectory="d:\data\dano\XBeach testcases\Deltares_case1.01_q3d\"/>
+		<Configuration Name="Release|x64" WorkingDirectory="d:\data\dano\XBeach testcases\Deltares_case1.01_q3d\"/>
+		<Configuration Name="netcdf_Debug|x64" WorkingDirectory="d:\data\dano\PhD research\Saidee Hasan\Deltares case discharge test\"/>
+		<Configuration Name="netcdf_Release|x64" WorkingDirectory="d:\data\dano\XBeach testcases\Deltares_case1.01_q3d\"/>
+		<Configuration Name="MPI_Debug|x64" WorkingDirectory="d:\data\dano\XBeach testcases\Deltares_case1.01_q3d\"/>
+		<Configuration Name="MPI_Release|x64" WorkingDirectory="d:\data\dano\XBeach testcases\Deltares_case1.01_q3d\"/>
+		<Configuration Name="MPI_netcdf_Debug|x64" WorkingDirectory="d:\data\dano\XBeach testcases\Deltares_case1.01_q3d\"/>
+		<Configuration Name="MPI_netcdf_Release|x64" WorkingDirectory="d:\data\dano\XBeach testcases\Deltares_case1.01_q3d\"/></Configurations></VisualStudioUserFile>

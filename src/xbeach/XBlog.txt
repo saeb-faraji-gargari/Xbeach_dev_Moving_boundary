@@ -1,0 +1,15 @@
+  **********************************************************
+                     Welcome to XBeach
+ 
+  version 1.24.5867-BOI-phase1
+               date2021/10/13 17:28:35
+     URL:https://svn.oss.deltares.nl/repos/xbeach/tags/2021-10-13-XBeach-v1.24.5
+ 867-BOI-phase1/src/xbeachlibrary
+  **********************************************************
+ 
+  Simulation started: YYYYMMDD    hh:mm:ss     time zone (UTC)
+                      20220609  16:09:06     +0200
+ 
+  General Input Module
+  Reading input parameters:
+   File 'params.txt' not found. Terminating simulation

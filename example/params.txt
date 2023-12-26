@@ -1,0 +1,155 @@
+ships = 0
+swave = 0
+sedtrans = 0
+morphology = 0
+avalanching = 0
+secorder = 0
+nonh    = 0
+nonhq3d = 0
+nhbreaker = 0
+nhlay = 0.1
+wbctype = off
+%wavemodel= stationary    
+wavemodel = nonh
+%wavint=2
+
+flow = 1
+
+viscosity = 0
+
+gridform = delft3d
+xyfile=testGridFile.grd
+%depfile =testDepFile.dep
+
+%depfile =Menno_dike_8cm_testDepFile_new.dep
+
+depfile = 20231215_Menno_testDepFile_new_thicker_dikes.dep
+
+
+posdwn=0
+thetamin=180
+thetamax=360
+dtheta=180
+thetanaut=1
+
+Hrms = 0.01
+Trep = 2.
+dir0 = 270.
+maxerror=0.00001
+maxiter=10
+
+
+front = wall
+%left=wall
+%right=wall
+left=neumann
+right=neumann
+back = wall
+epsi = 0
+bedfriction = manning
+bedfriccoef = 0.02
+
+
+form=soulsby_vanrijn
+z0=0.0001
+morfacopt=0
+morfac=100
+morstart=40
+wetslp = 0.3
+fixedavaltime=1
+avaltime=1
+
+
+%disch_loc_file=inflow.txt
+%disch_timeseries_file=hydrograph.csv
+
+
+
+%tideloc=0
+%zs0 = 0.05
+%zs0 = 0.06
+zs0 = 0.03
+
+
+
+metro_period      = 40
+metro_amp1        = -0.075
+metro_amp2        = -0.015
+metro_phase1      = 90
+metro_phase2      = 0
+metro_basinlength = 20
+metro_period2 =2
+
+%metro_basinlength = 25
+
+
+zb_updating_activation = 1
+zs_updating_with_zb_activation = 1
+countinuty_with_Dzb_activation = 0
+momentum_dz_dx_activation = 0
+reduced_velocity_activation = 0
+
+
+Dirichlet_water_level_activation = 1
+
+water_level_loc_file=water_level_loc_2.txt
+water_level_timeseries_file = tide_20231127_zb_start_zero.txt
+
+num_boundary_layer_water_level = 1
+
+%water_level_loc_file=water_level_loc_2_test1.txt
+
+
+CFL = 0.9
+tstop = 400
+tintg = 1
+tintp = 1
+
+
+outputformat=netcdf
+ncfilename=inichannel.nc
+
+
+nglobalvar = 12
+zb
+zs
+u
+v
+H
+hh
+sedero
+Susg
+Svsg
+Subg
+Svbg
+nuh
+
+
+npointvar = 5
+zb
+zs
+hh
+u
+v
+
+
+npoints = 19
+ 1 1.5
+ 2 1.5
+ 3 1.5
+ 4 1.5
+ 5 1.5
+ 6 1.5
+ 7 1.5
+ 8 1.5
+ 9 1.5
+10 1.5
+11 1.5
+12 1.5
+13 1.5
+14 1.5
+15 1.5
+16 1.5
+17 1.5
+18 1.5
+19 1.5
