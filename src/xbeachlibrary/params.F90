@@ -1473,10 +1473,10 @@ contains
          par%momentum_dz_dx_activation = readkey_int ('params.txt','momentum_dz_dx_activation',0,     0,         1,silent=.true.,strict=.true.)   ! ***** ----> Saeb
          par%zb_updating_activation = readkey_int ('params.txt','zb_updating_activation',0,     0,         1,silent=.true.,strict=.true.)   ! ***** ----> Saeb
          par%water_level_sea_river_boundary_condition_activation = readkey_int ('params.txt','water_level_sea_river_boundary_condition_activation',0,     0,         1,silent=.true.,strict=.true.)   ! ***** ----> Saeb
-         par%implicit_solve_continuity_activation = readkey_int ('params.txt','implicit_solve_continuity_activation',0,     0,         1,silent=.true.,strict=.true.)   ! ***** ----> Saeb
+         !par%implicit_solve_continuity_activation = readkey_int ('params.txt','implicit_solve_continuity_activation',0,     0,         1,silent=.true.,strict=.true.)   ! ***** ----> Saeb
          par%threshold_implicit_continuity = readkey_dbl ('params.txt','threshold_implicit_continuity',10.0d0,     0.0d0,         10.0d0,silent=.true.,strict=.true.)   ! ***** ----> Saeb
          
-         par%impicit_iteration_threshold = readkey_int ('params.txt','impicit_iteration_threshold',0,     0,         1,silent=.true.,strict=.true.)   ! ***** ----> Saeb
+         par%impicit_iteration_threshold = readkey_int ('params.txt','impicit_iteration_threshold',0,     0,         100,silent=.true.,strict=.true.)   ! ***** ----> Saeb
          par%water_depth_sea = readkey_dbl ('params.txt','water_depth_sea',10.0d0,     0.0d0,         10.0d0,silent=.true.,strict=.true.)   ! ***** ----> Saeb
          par%water_depth_river = readkey_dbl ('params.txt','water_depth_river',10.0d0,     0.0d0,         10.0d0,silent=.true.,strict=.true.)   ! ***** ----> Saeb
          par%Dirichlet_water_level_activation = readkey_int ('params.txt','Dirichlet_water_level_activation',0,     0,         1,silent=.true.,strict=.true.)   ! ***** ----> Saeb

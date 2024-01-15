@@ -1103,8 +1103,7 @@ contains
          ! Implicit solve uptain water level using continuity eq.
          !
 !********************************************************************************************************----> Saeb
-         if (par%implicit_solve_continuity_activation == 1) then
-
+        
             tolerance = 0.0d0
             do i = 1, s%nx+1
                do j = 1, s%ny+1
@@ -1115,16 +1114,10 @@ contains
             impicit_iteration_k = impicit_iteration_k + 1
 
             write(*, *) ' simulation time :', par%t
-            !write(*, *) ' Implicit solving continuity loop, tolerance :', tolerance
-            !write(*, *) ' impicit_iteration :', impicit_iteration_k
+            write(*, *) ' Implicit solving continuity loop, tolerance :', tolerance
+            write(*, *) ' impicit_iteration :', impicit_iteration_k
 
-         else
-
-            tolerance = 0.0d0
-            impicit_iteration_k = impicit_iteration_threshold + 1
-
-         endif
-
+         
 
       end do
 
