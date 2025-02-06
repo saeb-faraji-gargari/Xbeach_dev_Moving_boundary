@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Note: conda actiave (base) is required in Saeb computer 
+
 make clean
 
 rm -r dist_Saeb

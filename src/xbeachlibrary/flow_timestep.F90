@@ -73,12 +73,13 @@ contains
       integer                                  :: impicit_iteration_threshold
       integer                                  :: impicit_iteration_k
 
-      real*8                                   :: water_depth_sea      !***** ----> Saeb
-      real*8                                   :: water_depth_river      !***** ----> Saeb
+      ! real*8                                   :: water_depth_sea      !***** ----> Saeb
+      ! real*8                                   :: water_depth_river      !***** ----> Saeb
 
       integer                                  :: iostatus
       integer                                  :: file_pos
 
+      real*8                                   :: t_shift_metro=1.2     !***** ----> Saeb
 
       !real*8,dimension(:,:),allocatable,save  ::       uu_previous_time_step   !***** ----> Saeb
       !real*8,dimension(:,:),allocatable,save  ::       vv_previous_time_step   !***** ----> Saeb
@@ -92,6 +93,8 @@ contains
       real(8), dimension(:,:), pointer :: d_zb_dt(:,:)  !***** ----> Saeb
       allocate(d_zb_dt(s%nx+1, s%ny+1))                 !***** ----> Saeb
       d_zb_dt = 0.0d0                                   !***** ----> Saeb
+
+      
 
       !zs_old_implicit = s%zs
 
@@ -169,8 +172,8 @@ contains
 
 
 !********************************************************************************************************----> Saeb
-      par%metro_dzb=(-par%metro_omega*par%metro_amp1*sin(par%metro_omega*par%t-par%metro_phase1) &
-         -par%metro_omega2*par%metro_amp2*sin(par%metro_omega2*par%t-par%metro_phase2)) *par%dt
+      par%metro_dzb=(-par%metro_omega*par%metro_amp1*sin(par%metro_omega*(par%t-t_shift_metro)-par%metro_phase1) &
+         -par%metro_omega2*par%metro_amp2*sin(par%metro_omega2*(par%t-t_shift_metro)-par%metro_phase2)) *par%dt
 !********************************************************************************************************---->
 
 
@@ -810,8 +813,8 @@ contains
 
          if (par%countinuty_with_Dzb_activation == 1) then
 
-            metro_dzb_continuty=(-par%metro_omega*par%metro_amp1*sin(par%metro_omega*par%t-par%metro_phase1) &   !*****----> Saeb
-               -par%metro_omega2*par%metro_amp2*sin(par%metro_omega2*par%t-par%metro_phase2))
+            metro_dzb_continuty=(-par%metro_omega*par%metro_amp1*sin(par%metro_omega*(par%t-t_shift_metro)-par%metro_phase1) &   !*****----> Saeb
+               -par%metro_omega2*par%metro_amp2*sin(par%metro_omega2*(par%t-t_shift_metro)-par%metro_phase2))
 
             if (s%ny>0) then
                do j=jmin_zs,jmax_zs
@@ -836,7 +839,7 @@ contains
                   d_zb_dt(i,j)=metro_dzb_continuty*(0.5d0*par%metro_basinlength-(s%xz(i,j)-s%xz(1,1)))/(0.5d0*par%metro_basinlength)     !*****----> Saeb
 
                end do
-               s%zs(imin_zs:imax_zs,1) = s%zs(imin_zs:imax_zs,1)+(s%dzsdt(imin_zs:imax_zs,1)*par%dt) - (d_zb_dt(imin_zs:imax_zs,1)*par%dt)
+               s%zs(imin_zs:imax_zs,1) = s%zs(imin_zs:imax_zs,1)+(s%dzsdt(imin_zs:imax_zs,1)*par%dt) + (d_zb_dt(imin_zs:imax_zs,1)*par%dt)
             endif !s%ny>0
             !********************************************************************************************************----> Saeb
 

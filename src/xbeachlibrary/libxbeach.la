@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/saeb/XBeach_source_code/20240110_XBeach/dist_Saeb/lib'
+libdir='/home/saeb/XBeach_source_code/20240110_XBeach_v3_20250205/dist_Saeb/lib'
